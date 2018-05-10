@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.documentElement.style.fontSize = window.innerWidth / 750 * 100 + "px";
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <a>＜</a>
+            <h3>无连接</h3>
+            <b>☰</b>
+        </header>
+        <section>
+            <ul>
+                <li>
+                    <p class="active">❂</p>
+                    <span>电源</span>
+                </li>
+                <li>
+                    <p>❀</p>
+                    <span>首页</span>
+                </li>
+                <li>
+                    <p>☰</p>
+                    <span>菜单</span>
+                </li>
+                <li>
+                    <p>〠</p>
+                    <span>截屏</span>
+                </li>
+
+            </ul>
+            <div class="con">
+                电源
+            </div>
+        </section>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        $("ul li p").on("click", function() {
+            $(this).addClass("active").parent().siblings().children("p").removeClass("active");
+            var a = $(this).next().text();
+            $(".con").html(a);
+        })
+    </script>
+</body>
+
+</html>
